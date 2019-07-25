@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="/stylesheets/jtree/jtree.css" />
+<link rel="stylesheet" href="/stylesheets/rmenu/rmenu.css" />
+
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+  <ul class="breadcrumb">
+    <li>
+      <i class="ace-icon fa fa-home home-icon"></i>
+      <a href="/index">Home</a>
+    </li>
+    <li class="active">模块信息编辑</li>
+  </ul>
+</div>
+
+<div class="page-content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="space-6"></div>
+      <div id="treeView"></div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="alert alert-danger store-alert hidden">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <span></span>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label form-label-itemName"></label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" maxlength="15" id="form-field-itemName">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" id="btn-save">保存</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+    <!--根节点快捷菜单-->
+    <ul class="contextmenu right-menu-root">
+      <li class="add-module">
+        <a href="#">
+          <i class="icon-plus"></i>
+          新增一级模块
+        </a>
+      </li>
+    </ul>
+
+    <!--一级菜单节点快捷菜单-->
+    <ul class="contextmenu right-menu-module">
+      <li class="add-block"><a href="javascript:"><i class="icon-plus"></i> 新增二级模块</a></li>
+      <li class="change-module"><a href="javascript:"><i class="icon-pencil"></i> 更新当前模块</a></li>
+      <li class="remove-item"><a href="javascript:"><i class="icon-trash"></i> 删除当前模块</a></li>
+      <li class="move-in"><a href="javascript:"><i class="icon-reply"></i> 移入</a></li>
+      <li class="move-up"><a href="javascript:"><i class="icon-circle-arrow-up"></i> 上移</a></li>
+      <li class="move-down"><a href="javascript:"><i class="icon-circle-arrow-down"></i> 下移</a></li>
+    </ul>
+
+    <!--二级菜单节点快捷菜单-->
+    <ul class="contextmenu right-menu-block">
+      <li class="add-detail"><a href="javascript:"><i class="icon-plus"></i> 新增明细标题 </a></li>
+<!--      <li class="add-item"><a href="javascript:"><i class="icon-plus"></i> 新增三级模块</a></li>-->
+      <li class="change-block"><a href="javascript:"><i class="icon-pencil"></i> 更新当前模块</a></li>
+      <li class="remove-item"><a href="javascript:"><i class="icon-trash"></i> 删除当前模块</a></li>
+      <li class="move-in"><a href="javascript:"><i class="icon-reply-all"></i> 移入</a></li>
+      <li class="move-out"><a href="javascript:"><i class="icon-share"></i> 移出</a></li>
+      <li class="move-up"><a href="javascript:"><i class="icon-circle-arrow-up"></i> 上移</a></li>
+      <li class="move-down"><a href="javascript:"><i class="icon-circle-arrow-down"></i> 下移</a></li>
+    </ul>
+
+    <!--三级菜单节点快捷菜单-->
+    <ul class="contextmenu right-menu-item">
+      <li class="add-detail"><a href="javascript:"><i class="icon-plus"></i> 新增明细标题 </a></li>
+      <li class="change-item"><a href="javascript:"><i class="icon-pencil"></i> 编辑明细内容</a></li>
+      <li class="remove-item"><a href="javascript:"><i class="icon-trash"></i> 删除当前模块</a></li>
+      <li class="move-in"><a href="javascript:"><i class="icon-reply-all"></i> 移入</a></li>
+      <li class="move-out"><a href="javascript:"><i class="icon-share"></i> 移出</a></li>
+      <li class="move-up"><a href="javascript:"><i class="icon-circle-arrow-up"></i> 上移</a></li>
+      <li class="move-down"><a href="javascript:"><i class="icon-circle-arrow-down"></i> 下移</a></li>
+    </ul>
+
+    <!--详细内容节点快捷菜单-->
+    <ul class="contextmenu right-menu-detail">
+      <li class="change-item"><a href="javascript:;"><i class="icon-search"></i> 更细明细标题</a></li>
+      <li class="edit-detail"><a href="javascript:"><i class="icon-pencil"></i> 编辑详细内容 </a></li>
+      <li class="remove-item"><a href="javascript:"><i class="icon-pencil"></i> 删除详细内容 </a></li>
+      <li class="move-out"><a href="javascript:"><i class="icon-share"></i> 移出</a></li>
+      <li class="move-up"><a href="javascript:"><i class="icon-circle-arrow-up"></i> 上移</a></li>
+      <li class="move-down"><a href="javascript:"><i class="icon-circle-arrow-down"></i> 下移</a></li>
+    </ul>
+
+  </div>
+</div>
+
+
+<script src="/javascripts/jtree/tools.js"></script>
+<script src="/javascripts/jtree/handledata.js"></script>
+<script src="/javascripts/jtree/jtree.js"></script>
+<script src="/javascripts/rmenu/rmenu.js"></script>
+<script src="/javascripts/view/modules.js"></script>

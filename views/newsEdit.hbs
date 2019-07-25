@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="/stylesheets/fileUpload/iconfont.css" />
+<link rel="stylesheet" href="/stylesheets/fileUpload/fileUpload.css">
+<link rel="stylesheet" href="/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
+
+<script src="/ckeditor/ckeditor.js"></script>
+<script src="/ckeditor/samples/js/sample.js"></script>
+
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+  <ul class="breadcrumb">
+    <li>
+      <i class="ace-icon fa fa-home home-icon"></i>
+      <a href="/index">Home</a>
+    </li>
+    <li>
+      <i class="ace-icon fa fa-home home-icon"></i>
+      <a href="/news">新闻管理</a>
+    </li>
+    <li class="active">新闻编辑</li>
+  </ul>
+</div>
+
+<div class="page-content" ng-app="myApp" ng-controller="myCtrl">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="row option-bar">
+        <div class="col-xs-12">
+          <a href="/news" class="btn btn-option btn-default">
+            <i class="fa fa-reply"></i> &nbsp;
+            返回
+          </a>
+          <button type="button" class="btn btn-option btn-purple" ng-click="onShowDialog()">
+            <i class="fa fa-upload"></i> &nbsp;
+            缩略图
+          </button>
+          <button type="button" class="btn btn-option btn-primary" ng-click="onSave()">
+            <i class="fa fa-save"></i> &nbsp;
+            保存
+          </button>
+        </div>
+      </div>
+      <div class="space-6"></div>
+      <div class="row">
+        <div class="col-xs-4">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control text-center" maxlength="50" ng-model="model.newsTitle" placeholder="新闻标题">
+            </div>
+            <div class="form-group">
+              <input type="date" class="form-control" id="newsDate" placeholder="新闻日期" >
+            </div>
+            <div class="form-group">
+              <img ng-src="\{{model.newsThumbnailUrl}}" alt="">
+            </div>
+          </form>
+          
+        </div>
+        <div class="col-xs-8">
+          <textarea class="form-control" name="detailContent" id="detailContent"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" tabindex="-1" role="dialog" id="photo-upload-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">上传图片（*.jpg, *.jpeg, *.png）请上传1:1尺寸的图片</h4>
+        </div>
+        <div class="alert alert-danger store-alert hidden">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <span></span>
+        </div>
+        <div class="modal-body">
+          <div id="file-upload-image" class="fileUploadContent"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary" id="btn-save-upload-images" ng-click="onLoadImage()">保存</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
+</div>
+
+<input type="hidden" value="{{newsID}}" id="hidden_newsID">
+<script src="/javascripts/fileUpload/fileUpload.js"></script>
+<script src="/javascripts/view/newsEdit.js"></script>

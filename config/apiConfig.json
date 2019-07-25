@@ -1,0 +1,34 @@
+{
+  "StoreService": {
+    "host": "localhost",
+    "port": 8080,
+    "path": {
+      "login": "/api/account/login",
+      "users": "/api/account",
+      "addUser": "/api/account/add",
+      "changeUser": "/api/account/change",
+      "deleteUser": "/api/account/delete",
+      "modules": "/api/modules/all",
+      "addModule": "/api/modules/add",
+      "changeModule": "/api/modules/change",
+      "deleteModule": "/api/modules/delete",
+      "changeModuleSequence": "/api/modules/changeSequence",
+      "moveModule": "/api/modules/move",
+      "moduleDetail": "/api/moduleDetail/module",
+      "addModuleDetail": "/api/moduleDetail/add",
+      "changeModuleDetail": "/api/moduleDetail/change",
+      "moduleResources": "/api/moduleResources",
+      "addModuleResources": "/api/moduleResources/add",
+      "deleteModuleResources": "/api/moduleResources/delete",
+      "singleDetail": "/api/singleDetail",
+      "addSingleDetail": "/api/singleDetail/add",
+      "changeSingleDetail": "/api/singleDetail/change",
+      "deleteSingleDetail": "/api/singleDetail/delete",
+
+      "news": "/api/news",
+      "addNews": "/api/news/add",
+      "changeNews": "/api/news/change",
+      "deleteNews": "/api/news/delete"
+    }
+  }
+}

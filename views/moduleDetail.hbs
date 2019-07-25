@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
+<script src="/ckeditor/ckeditor.js"></script>
+<script src="/ckeditor/samples/js/sample.js"></script>
+
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+  <ul class="breadcrumb">
+    <li>
+      <i class="ace-icon fa fa-home home-icon"></i>
+      <a href="/index">Home</a>
+    </li>
+    <li>
+      <i class="ace-icon"></i>
+      <a href="/modules">模块信息管理</a>
+    </li>
+    <li class="active">模块信息编辑</li>
+  </ul>
+</div>
+
+<div class="page-content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="row option-bar">
+        <div class="col-xs-12">
+          <button type="button" class="btn btn-option btn-default" id="btn-close">
+            <i class="fa fa-reply"></i> &nbsp;
+            关闭
+          </button>
+          <button type="button" class="btn btn-option btn-primary" id="btn-save">
+            <i class="fa fa-save"></i> &nbsp;
+            保存
+          </button>
+        </div>
+      </div>
+      <div class="space-6"></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <textarea class="form-control" name="detailContent" id="detailContent"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<input type="hidden" value="{{moduleID}}" id="hidden_moduleID">
+<script src="/javascripts/view/moduleDetail.js"></script>
